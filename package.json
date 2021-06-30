@@ -1,0 +1,38 @@
+{
+  "name": "card-verification",
+  "version": "1.0.0",
+  "description": "Card Verification",
+  "main": "checkCardNumber.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel docs/index.html",
+    "build": "parcel build docs/index.html"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawlovskiii/card-verification.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawlovskiii/card-verification/issues"
+  },
+  "homepage": "https://github.com/pawlovskiii/card-verification#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
