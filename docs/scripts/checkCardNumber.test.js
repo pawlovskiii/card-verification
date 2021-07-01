@@ -20,12 +20,23 @@ test('should throw an error if the input contains the wrong number of digits', (
 
 test('should throw an error if the first two digits are not from certain range', () => {
 	expect(() => checkCardNumber(563456789012313)).toThrow(
-		'First two digits must be from range [[51-55], 34, 37, 4]'
+		'First two digits must be from range [[51-55], [40-42], 34, 37, 22, 4]'
 	);
 	expect(() => checkCardNumber(5995840321129)).toThrow(
-		'First two digits must be from range [[51-55], 34, 37, 4]'
+		'First two digits must be from range [[51-55], [40-42], 34, 37, 22, 4]'
 	);
 	expect(() => checkCardNumber(3503948576312345)).toThrow(
-		'First two digits must be from range [[51-55], 34, 37, 4]'
+		'First two digits must be from range [[51-55], [40-42], 34, 37, 22, 4]'
 	);
+});
+
+test(`should return the name of the card's provider`, () => {
+	expect(checkCardNumber(378282246310005)).toBe('American Express');
+	expect(checkCardNumber(378734493671000)).toBe('American Express');
+	expect(checkCardNumber(2221000000000009)).toBe('Mastercard');
+	expect(checkCardNumber(5555555555554444)).toBe('Mastercard');
+	expect(checkCardNumber(5105105105105100)).toBe('Mastercard');
+	expect(checkCardNumber(4111111111111111)).toBe('Visa');
+	expect(checkCardNumber(4012888888881881)).toBe('Visa');
+	expect(checkCardNumber(4222222222222)).toBe('Visa');
 });
