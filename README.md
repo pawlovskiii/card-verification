@@ -1,4 +1,6 @@
-![alt text](https://thehustle.co/wp-content/uploads/2019/11/Spunky-Brief_2019-11-20T060248.746Z-1.jpg)
+<p align="center">
+<img src="https://thehustle.co/wp-content/uploads/2019/11/Spunky-Brief_2019-11-20T060248.746Z-1.jpg" alt="credit cards">
+</p>
 <h1 align="center">
     Card Verification
 </h1
@@ -9,7 +11,7 @@
 * [Setup](#setup)
 
 ### General info 
-
+The following project is about validating the card number, using Luhn algorithm and several other things which indicates the card's provider.
 
 ### Technologies
 Name  | Versions
