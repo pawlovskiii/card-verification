@@ -39,4 +39,4 @@ const input = 371449635398431;
 
 console.log(checkCardNumber(input));
 
-export { checkCardNumber };
+export { algorithmLuhn, checkCardNumber };
