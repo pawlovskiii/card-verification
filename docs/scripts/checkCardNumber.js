@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 function algorithmLuhn(cardNumber) {
 	const splittedCardNumber = [...String(cardNumber)].reverse();
 	const extractOddNumbers = [];
