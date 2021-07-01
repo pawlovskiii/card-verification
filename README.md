@@ -11,7 +11,7 @@
 * [Setup](#setup)
 
 ### General info 
-The following project is about validating the card number, using Luhn algorithm and several other things which indicates the card's provider.
+My implementation of card verification, which is about validating the card number, using Luhn algorithm and several other things which indicates the card's provider.
 
 ### Technologies
 Name  | Versions
