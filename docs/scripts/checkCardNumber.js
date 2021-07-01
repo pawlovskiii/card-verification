@@ -1,21 +1,21 @@
 function algorithmLuhn(cardNumber) {
 	const splittedCardNumber = [...String(cardNumber)].reverse();
+
 	const extractOddNumbers = [];
 	for (let i = 1; i < splittedCardNumber.length; i += 2) {
 		extractOddNumbers.push(splittedCardNumber[i] * 2);
 	}
-	const breakDownReceivedOddDigits = String(extractOddNumbers).replace(/\d\d/g, (x) => x.split(''));
+	const breakDownReceivedOddDigits = String(extractOddNumbers).replace(/\d\d/g, (el) => el.split(''));
 	const convertingStringToArray = [];
-	breakDownReceivedOddDigits.replace(/\d/g, (x) => convertingStringToArray.push(Number(x)));
+	breakDownReceivedOddDigits.replace(/\d/g, (el) => convertingStringToArray.push(Number(el)));
 	const summationOddDigits = convertingStringToArray.reduce((total, item) => total + item);
 
-	const extractEvenNumbers = [];
-	for (let i = 0; i < splittedCardNumber.length; i += 2) {
-		extractEvenNumbers.push(Number(splittedCardNumber[i]));
-	}
+	const extractEvenNumbers = splittedCardNumber
+		.filter((digit, index) => index % 2 === 0)
+		.map((digit) => Number(digit));
 	const summationEvenDigits = extractEvenNumbers.reduce((total, item) => total + item);
-	const summOddAndEvenDigits = summationOddDigits + summationEvenDigits;
 
+	const summOddAndEvenDigits = summationOddDigits + summationEvenDigits;
 	return summOddAndEvenDigits % 10 === 0;
 }
 
