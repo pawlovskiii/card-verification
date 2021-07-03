@@ -1,22 +1,18 @@
 function algorithmLuhn(cardNumber) {
-	const splittedCardNumber = [...String(cardNumber)].reverse();
+	const reversedSplitNumbers = [...String(cardNumber)].reverse();
 
-	const extractOddNumbers = [];
-	for (let i = 1; i < splittedCardNumber.length; i += 2) {
-		extractOddNumbers.push(splittedCardNumber[i] * 2);
-	}
-	const breakDownReceivedOddDigits = String(extractOddNumbers).replace(/\d\d/g, (el) => el.split(''));
-	const convertingStringToArray = [];
-	breakDownReceivedOddDigits.replace(/\d/g, (el) => convertingStringToArray.push(Number(el)));
-	const summationOddDigits = convertingStringToArray.reduce((total, item) => total + item);
+	const getOdd = reversedSplitNumbers.filter((_, index) => index % 2).map((digit) => digit * 2);
+	const splitUpOdd = String(getOdd).replace(/\d\d/g, (el) => el.split(''));
+	const stringToArray = [];
+	splitUpOdd.replace(/\d/g, (el) => stringToArray.push(Number(el)));
+	const sumOdd = stringToArray.reduce((total, item) => total + item);
 
-	const extractEvenNumbers = splittedCardNumber
+	const sumEven = reversedSplitNumbers
 		.filter((_, index) => index % 2 === 0)
-		.map((digit) => Number(digit));
-	const summationEvenDigits = extractEvenNumbers.reduce((total, item) => total + item);
+		.map((digit) => Number(digit))
+		.reduce((total, item) => total + item);
 
-	const summOddAndEvenDigits = summationOddDigits + summationEvenDigits;
-	return summOddAndEvenDigits % 10 === 0;
+	return (sumOdd + sumEven) % 10 === 0;
 }
 
 function inputCardValidation(cardNumber) {
@@ -32,5 +28,7 @@ function checkCardNumber(cardNumber) {
 	if (String(cardNumber).length === 15 && /^34|37/.test(cardNumber)) return 'American Express';
 	throw Error('Invalid card number.');
 }
+
+console.log(algorithmLuhn(378734493671000));
 
 export { algorithmLuhn, checkCardNumber };
