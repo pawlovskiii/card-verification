@@ -1,2 +1,2 @@
-/docs/scripts/checkCardNumber.test.js
-/docs/scripts/algorithmLuhn.test.js
+/docs/__tests__/checkCardNumber.test.js
+/docs/__tests__/algorithmLuhn.test.js

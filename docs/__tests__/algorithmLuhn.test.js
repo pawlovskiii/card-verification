@@ -1,4 +1,4 @@
-import { algorithmLuhn } from './checkCardNumber.js';
+import { algorithmLuhn } from '../scripts/checkCardNumber.js';
 
 test('should return true if the card verification is correct', () => {
 	expect(algorithmLuhn(5193080150954111)).toBe(true);

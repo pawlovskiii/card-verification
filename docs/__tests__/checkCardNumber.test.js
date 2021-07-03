@@ -1,4 +1,4 @@
-import { checkCardNumber } from './checkCardNumber.js';
+import { checkCardNumber } from '../scripts/checkCardNumber.js';
 
 test('should throw an error if the input is the wrong type', () => {
 	expect(() => checkCardNumber('abcde')).toThrow('Input must be a number.');
