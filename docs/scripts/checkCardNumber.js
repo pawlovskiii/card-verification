@@ -11,7 +11,7 @@ function algorithmLuhn(cardNumber) {
 	const summationOddDigits = convertingStringToArray.reduce((total, item) => total + item);
 
 	const extractEvenNumbers = splittedCardNumber
-		.filter((digit, index) => index % 2 === 0)
+		.filter((_, index) => index % 2 === 0)
 		.map((digit) => Number(digit));
 	const summationEvenDigits = extractEvenNumbers.reduce((total, item) => total + item);
 
@@ -19,19 +19,18 @@ function algorithmLuhn(cardNumber) {
 	return summOddAndEvenDigits % 10 === 0;
 }
 
-function cardValidation(cardNumber) {
+function inputCardValidation(cardNumber) {
 	if (typeof cardNumber !== 'number') throw Error('Input must be a number.');
-	if (!/^(\d{13}|\d{15,16})$/.test(cardNumber)) throw Error('Input must contains 13, 15 or 16 digits.');
-	if (!['51', '52', '53', '54', '55', '22', '4', '34', '37', '40', '41', '42'].includes(String(cardNumber).match(/^\d\d/g).join(''))) throw Error('First two digits must be from range [[51-55], [40-42], 34, 37, 22, 4]');
 	if (!algorithmLuhn(cardNumber)) throw Error('Invalid card number.');
 	return cardNumber;
 }
 
 function checkCardNumber(cardNumber) {
-	cardValidation(cardNumber);
-	if (String(cardNumber).length === 16 && ['51', '52', '53', '54', '55', '22'].includes(String(cardNumber).match(/^\d\d/g).join(''))) return 'Mastercard';
+	inputCardValidation(cardNumber);
+	if (String(cardNumber).length === 16 && /^5[1-5]|22/.test(cardNumber)) return 'Mastercard';
 	if (/^(\d{13}|\d{16})$/.test(cardNumber) && [...String(cardNumber)][0] === '4') return 'Visa';
-	if (String(cardNumber).length === 15 && ['34', '37'].includes(String(cardNumber).match(/^\d\d/g).join(''))) return 'American Express';
+	if (String(cardNumber).length === 15 && /^34|37/.test(cardNumber)) return 'American Express';
+	throw Error('Invalid card number.');
 }
 
 export { algorithmLuhn, checkCardNumber };
