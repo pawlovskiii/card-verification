@@ -1,5 +1,3 @@
-import { initialCardValidation } from './initialCardValidation.js';
-
 function isMasterCard(cardNumber) {
 	const isLength = String(cardNumber).length === 16;
 	const isPrefix = /^5[1-5]|22/.test(cardNumber);
@@ -19,7 +17,6 @@ function isAmEx(cardNumber) {
 }
 
 function checkCardProvider(cardNumber) {
-	initialCardValidation(cardNumber);
 	if (isMasterCard(cardNumber)) return 'Mastercard';
 	if (isVisa(cardNumber)) return 'Visa';
 	if (isAmEx(cardNumber)) return 'American Express';
