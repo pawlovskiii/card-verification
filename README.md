@@ -14,13 +14,10 @@
 My implementation of card verification, which is about validating the card number, using Luhn algorithm and several other things which indicates the card's provider.
 
 ### Technologies
+Implementation created with Jest (as testing framework), ESLint (for improving syntax and enforce code style) and babel-jest (to enable the use of ES6 Modules with Jest framework). During this project I also tried to extract certain functionalities into different modules to make it more readable and elasticity. Moreover I also wanted to create consistent commit history to show my methodology of work.
 Name  | Versions
 --- | --- 
 Node.js  | 16.4.0
-Jest | 27.0.6
-ESLint | 7.29.0 
-Parcel | 1.12.5
-babel-jest | 27.0.6
 ### Setup
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
