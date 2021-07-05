@@ -1,2 +1,2 @@
-/docs/__tests__/checkCardProvider.test.js
-/docs/__tests__/isCardNumberValid.test.js
+/src/__tests__/checkCardProvider.test.js
+/src/__tests__/isCardNumberValid.test.js
