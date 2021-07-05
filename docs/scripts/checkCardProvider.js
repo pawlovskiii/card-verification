@@ -20,7 +20,7 @@ function checkCardProvider(cardNumber) {
 	if (isMasterCard(cardNumber)) return 'Mastercard';
 	if (isVisa(cardNumber)) return 'Visa';
 	if (isAmEx(cardNumber)) return 'American Express';
-	throw Error('Invalid card number.');
+	throw Error('Wrong card provider.');
 }
 
 export { checkCardProvider };
