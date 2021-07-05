@@ -4,7 +4,8 @@
 <h1 align="center">
     Card Verification
 </h1
-
+<p> </p>
+    
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
