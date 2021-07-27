@@ -32,9 +32,6 @@ $ cd card-verification
 # Install dependencies
 $ npm install 
 
-# Run the app
-$ npm start
-
 # Run the tests
 $ npm test
 ```
