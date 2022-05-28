@@ -12,10 +12,10 @@
 * [Setup](#setup)
 
 ### General info 
-My implementation of card verification, which is about validating the card number, using Luhn algorithm and several other things which indicates the card's provider.
+My implementation of card verification, which is about validating the card number, using the Luhn algorithm and several other things which indicate the card's provider.
 
 ### Technologies
-Implementation created with Jest (as testing framework), ESLint (for improving syntax and enforce code style) and babel-jest (to enable the use of ES6 Modules with Jest framework). During this project, I also tried to separate functionalities into different modules in order to divide responsibilities between them. That make files more readable and flexible and that leads to better code architecture. Moreover I also wanted to create consistent commit history to show my methodology of work.
+Implementation was created with Jest (as the testing framework), ESLint (for improving syntax and enforcing code style), and babel-jest (to enable the use of ES6 Modules with the Jest framework). During this project, I also tried to separate functionalities into different modules to divide responsibilities between them. That makes files more readable and flexible and that leads to the better code architecture. Moreover, I also wanted to create consistent commit history to show my methodology of work.
 Name  | Versions
 --- | --- 
 Node.js  | 16.4.0
